@@ -10,8 +10,8 @@ void Log(const char *fmt, ...)
 	va_start(list, fmt);
 
 	// To console
-	DWORD len = wvsprintf(buffer, fmt, list);
-	WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), buffer, len, (DWORD *)&w, NULL);
+	DWORD len = wvsprintfA(buffer, fmt, list);
+	WriteConsoleA(GetStdHandle(STD_OUTPUT_HANDLE), buffer, len, (DWORD *)&w, NULL);
 
 	if (fopen_s(&f, "dinput8.log", "a+") == 0)
 	{
